@@ -25,5 +25,38 @@ public class BinaryToDecimal {
 				    010110 in binary is equal to 22 in decimal!
 		 
 		 */
+		
+
+		System.out.println(binaryToDecimal("010110"));
+		System.out.println(binaryToDecimal("100110"));
+		
+	}
+	
+	public static int binaryToDecimal(String x) {
+		
+		
+		
+		int ans = 0;
+		
+		int[] powers = new int[x.length()];
+		
+		powers[powers.length-1] = 1;
+		
+		
+ 		
+		for (int i = powers.length-2; i >= 0; i--) {
+			powers[i] = powers[i+1] * 2;
+			
+		}
+		
+		for (int i = 0; i < x.length(); i++) {
+			if ( Integer.parseInt(x.substring(i, i+1)) == 1) {
+				ans += powers[i];
+			}
+		
+		}
+		
+		return ans;
+		
 	}
 }
