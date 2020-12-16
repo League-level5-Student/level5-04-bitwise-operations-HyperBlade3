@@ -52,32 +52,34 @@ public class DecimalToBinary {
 		 * What about negative decimal numbers? Does the same method work? Below is a
 		 * method that converts a decimal integer to a String of binary digits. Enter
 		 * a negative number and check if it matches your calculations.
-		 *  *hint* https://en.wikipedia.org/wiki/Two%27s_complement
+		 *  *hint* c
 		 * 
 		*/
 		
-		System.out.println( convertDecimalToBinary( -4 ) );
+		System.out.println( convertDecimalToBinary( -3 ) );
 	}
 	
     public static String convertDecimalToBinary(int decimalNum) {
-        String binaryStr = "";
-    
-        do {
-            // 1. Logical right shift by 1
-            int quotient = decimalNum >>> 1;
-        
-            // 2. Check remainder and add '1' or '0'
-            if( decimalNum % 2 != 0 ){
-                binaryStr = '1' + binaryStr;
-            } else {
-                binaryStr = '0' + binaryStr;
-            }
-            
-            decimalNum = quotient;
-            
-        // 3. Repeat until number is 0
-        } while( decimalNum != 0 );
-        
-        return binaryStr;
+    	
+    	 String binaryStr = "";
+    	    
+         do {
+             // 1. Logical right shift by 1
+             int quotient = decimalNum >>> 1;
+         
+             // 2. Check remainder and add '1' or '0'
+             if( decimalNum % 2 != 0 ){
+                 binaryStr = '1' + binaryStr;
+             } else {
+                 binaryStr = '0' + binaryStr;
+             }
+             
+             decimalNum = quotient;
+             
+         // 3. Repeat until number is 0
+         } while( decimalNum != 0 );
+         
+         return binaryStr;
+     
     }
 }
